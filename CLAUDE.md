@@ -28,6 +28,7 @@ kommit-frontend/
 │   │   └── utils.ts
 │   ├── data/           # textes des écrans
 │   └── types/          # contrat d'API
+├── .mcp.json           # serveur MCP Figma
 ├── CLAUDE.md
 ├── components.json     # config shadcn
 ├── index.html
