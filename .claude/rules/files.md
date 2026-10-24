@@ -12,6 +12,8 @@ Comment on organise les fichiers dans le projet — valable **partout**.
 
 **Un fichier qui exporte un composant React est en PascalCase**, au nom exact du composant : `Navbar.tsx`, `PageHeading.tsx`, `TextField.tsx`. Le fichier et le composant portent le même nom, toujours.
 
+**Le composant racine d'un écran se termine par `Page`** : `<Écran>Page.tsx`, dans `components/pages/<Écran>/` (`HealthCheckPage.tsx`, `SignupPage.tsx`). Ses morceaux spécifiques gardent leur nom sans suffixe (`SignupForm.tsx`), et le dossier aussi (`Signup/`).
+
 **Tout le reste est en camelCase**, sans point ni tiret : `queryKeys.ts`, `validation.ts`, `format.ts`. Vaut pour `logic/`, `lib/`, `data/` et `types/`.
 
 **Exception assumée : les composants générés par shadcn restent en kebab-case** (`alert-dialog.tsx`, `card.tsx`, `sonner.tsx`). C'est la convention de la CLI, qui les régénère sous ce nom. **Ne pas les renommer** : la prochaine commande `shadcn add` recréerait le fichier en kebab-case à côté du tien. Un composant écrit à la main dans `components/ui/`, lui, suit la règle PascalCase.
