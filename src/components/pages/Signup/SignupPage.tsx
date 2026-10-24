@@ -17,7 +17,7 @@ export default function SignupPage() {
   const signup = useMutation({
     mutationFn: signUp,
     onSuccess: async () => {
-      await queryClient.fetchQuery({ queryKey: queryKeys.session, queryFn: fetchSession, staleTime: 0 })
+      queryClient.setQueryData(queryKeys.session, await fetchSession())
       navigate('/', { state: { arrival: 'signup' } })
     },
   })

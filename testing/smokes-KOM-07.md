@@ -27,7 +27,7 @@ Précondition : visiteur (aucune session).
 
 1. Ouvrir la page `/`.
 
-Attendu : la page affiche le message d'accueil (ex. « Prêt pour ton standup »), le header contient les boutons « Se connecter » et « Créer un compte », le footer est affiché sur toute la largeur, et aucun bouton « Se déconnecter » n'est présent.
+Attendu : la page affiche le message d'accueil (ex. « Prêt(e) pour ton daily standup ? »), le header contient les boutons « Se connecter » et « Créer un compte », le footer est affiché sur toute la largeur, et aucun bouton « Se déconnecter » n'est présent.
 
 - [ ] Vérifié
 

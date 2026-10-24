@@ -10,7 +10,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "test:e2e": "playwright test --project=deterministic",
+    "test:e2e:headed": "HEADED=1 playwright test --project=deterministic",
+    "test:e2e:nondet": "playwright test --project=nondet --workers=1",
+    "test:e2e:nondet:headed": "HEADED=1 playwright test --project=nondet"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -30,6 +34,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",

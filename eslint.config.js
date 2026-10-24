@@ -28,4 +28,9 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    // e2e/ est hors de src/, donc hors de portée de l'alias @/ (cf. rule imports.md).
+    files: ['e2e/**'],
+    rules: { 'no-restricted-imports': 'off' },
+  },
 )

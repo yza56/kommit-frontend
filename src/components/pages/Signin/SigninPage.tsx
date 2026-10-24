@@ -17,7 +17,7 @@ export default function SigninPage() {
   const signin = useMutation({
     mutationFn: signIn,
     onSuccess: async () => {
-      await queryClient.fetchQuery({ queryKey: queryKeys.session, queryFn: fetchSession, staleTime: 0 })
+      queryClient.setQueryData(queryKeys.session, await fetchSession())
       navigate('/', { state: { arrival: 'signin' } })
     },
   })

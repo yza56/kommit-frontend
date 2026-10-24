@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react'
 
 import SubmitButton from '@/components/ui/SubmitButton'
 import TextField from '@/components/ui/TextField'
@@ -14,6 +14,12 @@ type SigninFormProps = {
 
 export default function SigninForm({ isPending, serverError, onSubmit }: SigninFormProps) {
   const [values, setValues] = useState<SigninValues>({ email: '', password: '' })
+  // isPending ne passe à vrai qu'au rendu suivant : le ref bloque un 2e clic immédiat (RM16).
+  const hasSubmittedRef = useRef(false)
+
+  useEffect(() => {
+    if (!isPending) hasSubmittedRef.current = false
+  }, [isPending])
 
   const fieldProps = (field: keyof SigninValues) => ({
     name: field,
@@ -23,8 +29,9 @@ export default function SigninForm({ isPending, serverError, onSubmit }: SigninF
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (isPending || isSigninSubmitDisabled(values, isPending)) return
+    if (hasSubmittedRef.current || isSigninSubmitDisabled(values, isPending)) return
 
+    hasSubmittedRef.current = true
     onSubmit(values)
   }
 

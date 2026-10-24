@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react'
 
 import SubmitButton from '@/components/ui/SubmitButton'
 import TextField from '@/components/ui/TextField'
@@ -18,6 +18,12 @@ type SignupFormProps = {
 export default function SignupForm({ isPending, emailError, formError, onSubmit }: SignupFormProps) {
   const [values, setValues] = useState<SignupValues>({ name: '', email: '', password: '' })
   const [hasSubmitted, setHasSubmitted] = useState(false)
+  // isPending ne passe à vrai qu'au rendu suivant : le ref bloque un 2e clic immédiat (RM16).
+  const hasSubmittedRef = useRef(false)
+
+  useEffect(() => {
+    if (!isPending) hasSubmittedRef.current = false
+  }, [isPending])
   const visibleErrors = getVisibleSignupErrors(values, hasSubmitted)
 
   const fieldProps = (field: SignupField) => ({
@@ -30,10 +36,13 @@ export default function SignupForm({ isPending, emailError, formError, onSubmit 
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (isPending) return
+    if (hasSubmittedRef.current) return
 
     setHasSubmitted(true)
-    if (getInvalidSignupFields(values).length === 0) onSubmit(values)
+    if (getInvalidSignupFields(values).length === 0) {
+      hasSubmittedRef.current = true
+      onSubmit(values)
+    }
   }
 
   return (
