@@ -13,9 +13,10 @@ type SignupFormProps = {
   emailError?: string
   formError?: string
   onSubmit: (values: SignupValues) => void
+  onEdit: () => void
 }
 
-export default function SignupForm({ isPending, emailError, formError, onSubmit }: SignupFormProps) {
+export default function SignupForm({ isPending, emailError, formError, onSubmit, onEdit }: SignupFormProps) {
   const [values, setValues] = useState<SignupValues>({ name: '', email: '', password: '' })
   const [hasSubmitted, setHasSubmitted] = useState(false)
   // isPending ne passe à vrai qu'au rendu suivant : le ref bloque un 2e clic immédiat (RM16).
@@ -29,7 +30,10 @@ export default function SignupForm({ isPending, emailError, formError, onSubmit 
   const fieldProps = (field: SignupField) => ({
     name: field,
     value: values[field],
-    onChange: (event: ChangeEvent<HTMLInputElement>) => setValues({ ...values, [field]: event.target.value }),
+    onChange: (event: ChangeEvent<HTMLInputElement>) => {
+      setValues({ ...values, [field]: event.target.value })
+      onEdit()
+    },
   })
   const formatError = (field: SignupField) =>
     visibleErrors.includes(field) ? signupTexts.fieldErrors[field] : undefined

@@ -44,6 +44,7 @@ export default function SignupPage() {
       >
         <SignupForm
           isPending={signup.isPending}
+          onEdit={() => signup.isError && signup.reset()}
           emailError={error?.target === 'email' ? error.message : undefined}
           formError={error?.target === 'form' ? error.message : undefined}
           onSubmit={(values) =>

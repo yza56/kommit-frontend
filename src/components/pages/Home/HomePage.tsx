@@ -67,7 +67,7 @@ export default function HomePage() {
           <h1 className="text-3xl leading-[1.2] font-bold text-heading md:text-5xl">
             {firstName !== undefined ? (
               <>
-                {greeting.slice(0, greeting.length - highlight.length)}
+                {greeting.slice(0, -highlight.length)}
                 <span className="text-accent-title">{highlight}</span>
               </>
             ) : (
