@@ -18,16 +18,22 @@ kommit-frontend/
 │   ├── main.tsx        # point d'entrée
 │   ├── App.tsx         # providers et routes
 │   ├── index.css
+│   ├── assets/         # logo Kommit
 │   ├── components/
-│   │   ├── ui/         # composants génériques (shadcn)
+│   │   ├── ui/         # composants génériques (shadcn + Logo, Header, Footer, PageShell, TextField, AuthCard)
 │   │   └── pages/
-│   │       └── HealthCheck/  # boutons de vérification du backend
+│   │       ├── HealthCheck/  # boutons de vérification du backend
+│   │       ├── Home/         # accueil visiteur et connecté
+│   │       ├── Signup/       # inscription
+│   │       └── Signin/       # connexion
 │   ├── lib/
 │   │   ├── api/        # appels réseau (client, health, queryKeys)
 │   │   ├── queryClient.ts
 │   │   └── utils.ts
 │   ├── data/           # textes des écrans
 │   └── types/          # contrat d'API
+├── maquettes/          # code brut, assets et FLOW.md des maquettes Figma
+├── eslint.config.js
 ├── .mcp.json           # serveur MCP Figma
 ├── CLAUDE.md
 ├── components.json     # config shadcn
