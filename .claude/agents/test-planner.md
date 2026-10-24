@@ -1,7 +1,7 @@
 ---
 name: test-planner
 description: Prend le lien (ou l'ID) d'un ticket frontend, classe ses règles métier sur trois états — testable en unitaire (🟢), partiel (🟠, unitaire + smoke manuel), vérifié à la main (🔴) — et écrit l'inventaire dans testing/inventaire-<TICKET_ID>.md. À lancer en amont de unit-test-writer et smoke-test-writer, quand on veut un inventaire durable sans interaction. Utiliser quand l'utilisateur dit "inventaire des tests", "triage des tests d'un ticket", "quelles RM sont testables en unitaire", "étape 1".
-tools: Read, Write, Glob, Grep, mcp__claude_ai_Notion__notion-fetch
+tools: Read, Write, Glob, Grep, mcp__notion__notion-fetch
 color: blue
 ---
 

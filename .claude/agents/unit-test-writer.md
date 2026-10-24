@@ -1,7 +1,7 @@
 ---
 name: unit-test-writer
 description: Écrit les tests UNITAIRES de la logique métier frontend AVANT l'implémentation. Prend l'inventaire des tests du ticket (les RM 🟢 + la part unitaire des 🟠, produit par test-planner) + les règles métier du ticket + le contrat d'API, et laisse sur le disque une suite de tests Vitest qui échouent, sur des fonctions pures de src/logic/ (sans rendu, sans React). Tourne en autonomie, sans interaction. Les RM 🔴 et le complément smoke des 🟠 relèvent de smoke-test-writer. Utiliser quand l'utilisateur dit "test-first", "écris les tests", "tests avant implémentation", "cahier des charges testable", "tests unitaires frontend".
-tools: Read, Write, Edit, Glob, Grep, Bash, mcp__claude_ai_Notion__notion-fetch
+tools: Read, Write, Edit, Glob, Grep, Bash, mcp__notion__notion-fetch
 color: green
 ---
 

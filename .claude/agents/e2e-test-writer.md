@@ -1,7 +1,7 @@
 ---
 name: e2e-test-writer
 description: Écrit les tests end-to-end Playwright en transcrivant TOUS les smokes du ticket, APRÈS que le code de prod est vert — jamais en test-first. Prend l'inventaire + les smokes du ticket + le code déjà implémenté, transcrit chaque scénario de smoke en une spec sous e2e/ (un e2e par smoke), cible les éléments par leur libellé visible, gère l'état des données (emails uniques par run). Le smoke est la source, l'e2e sa version exécutable ; aucune part ne reste en smoke manuel. Hors CI, lancé à la demande. Utiliser quand l'utilisateur dit "écris les e2e", "tests Playwright", "transcris les smokes", "fin d'étape 3".
-tools: Read, Write, Edit, Glob, Grep, Bash, mcp__claude_ai_Notion__notion-fetch
+tools: Read, Write, Edit, Glob, Grep, Bash, mcp__notion__notion-fetch
 color: cyan
 ---
 

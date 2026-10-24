@@ -1,7 +1,7 @@
 ---
 name: smoke-test-writer
 description: Écrit les scénarios de smoke AVANT l'implémentation. Prend l'inventaire des tests du ticket (les RM 🔴 + le complément smoke des 🟠, produit par test-planner) + le ticket + le contrat d'API, et laisse sur le disque testing/smokes-<TICKET_ID>.md — un scénario par RM (préconditions, étapes navigateur ciblées par libellé visible, résultat attendu observable). Le smoke est la SOURCE en langage humain. Après le code, `e2e-test-writer` le transcrit en un e2e Playwright. Tourne en autonomie, sans interaction, et n'exécute aucun scénario. Utiliser quand l'utilisateur dit "smoke", "scénarios de smoke", "smoke test frontend".
-tools: Read, Write, Edit, Glob, Grep, mcp__claude_ai_Notion__notion-fetch
+tools: Read, Write, Edit, Glob, Grep, mcp__notion__notion-fetch
 color: red
 ---
 
