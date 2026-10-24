@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react'
 
 import Footer from '@/components/ui/Footer'
-import Header from '@/components/ui/Header'
+import NavBar from '@/components/ui/NavBar'
 
 type PageShellProps = {
-  headerActions: ReactNode
+  navBarActions: ReactNode
   children: ReactNode
 }
 
-export default function PageShell({ headerActions, children }: PageShellProps) {
+export default function PageShell({ navBarActions, children }: PageShellProps) {
   return (
     <div className="flex min-h-screen flex-col items-center bg-background">
-      <Header>{headerActions}</Header>
+      <NavBar>{navBarActions}</NavBar>
       <main className="flex w-full flex-1 flex-col items-center">{children}</main>
       <Footer />
     </div>

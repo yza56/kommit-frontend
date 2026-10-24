@@ -9,7 +9,7 @@ import { signinTexts } from '@/data/signin'
 export default function SigninPage() {
   return (
     <PageShell
-      headerActions={
+      navBarActions={
         <Button nativeButton={false} render={<Link to="/signup" />}>
           {signinTexts.headerSignUp}
         </Button>

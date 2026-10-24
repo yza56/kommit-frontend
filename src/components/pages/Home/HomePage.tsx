@@ -14,7 +14,7 @@ export default function HomePage({ firstName }: HomePageProps) {
 
   return (
     <PageShell
-      headerActions={
+      navBarActions={
         isConnected ? (
           <Button variant="ghost">
             <LogOutIcon aria-hidden="true" className="size-6" />

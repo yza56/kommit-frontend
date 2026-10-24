@@ -20,7 +20,7 @@ kommit-frontend/
 │   ├── index.css
 │   ├── assets/         # logo Kommit
 │   ├── components/
-│   │   ├── ui/         # composants génériques (shadcn + Logo, Header, Footer, PageShell, TextField, AuthCard)
+│   │   ├── ui/         # composants génériques (shadcn + Logo, NavBar, Footer, PageShell, TextField, AuthCard)
 │   │   └── pages/
 │   │       ├── HealthCheck/  # boutons de vérification du backend
 │   │       ├── Home/         # accueil visiteur et connecté

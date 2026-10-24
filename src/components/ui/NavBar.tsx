@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 import Logo from '@/components/ui/Logo'
 
-export default function Header({ children }: { children?: ReactNode }) {
+export default function NavBar({ children }: { children?: ReactNode }) {
   return (
     <header className="flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-3 bg-white/80 px-3 py-5 backdrop-blur-[6px] md:gap-x-6 md:px-6">
       <Link to="/">
