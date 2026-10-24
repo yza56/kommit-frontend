@@ -33,12 +33,15 @@ kommit-frontend/
 │   │   └── utils.ts
 │   ├── data/           # textes des écrans
 │   └── types/          # contrat d'API
+├── e2e/                # tests Playwright (un par smoke) et leurs helpers
+├── testing/            # inventaire des tests et scénarios de smoke par ticket
 ├── maquettes/          # code brut, assets et FLOW.md des maquettes Figma
 ├── eslint.config.js
 ├── .mcp.json           # serveur MCP Figma
 ├── CLAUDE.md
 ├── components.json     # config shadcn
 ├── index.html
+├── playwright.config.ts
 ├── package.json
 ├── pnpm-lock.yaml
 ├── tsconfig*.json
