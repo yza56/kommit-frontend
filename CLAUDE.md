@@ -20,14 +20,15 @@ kommit-frontend/
 │   ├── index.css
 │   ├── assets/         # logo Kommit
 │   ├── components/
-│   │   ├── ui/         # composants génériques (shadcn + Logo, NavBar, Footer, PageShell, TextField, AuthCard)
+│   │   ├── ui/         # composants génériques (shadcn + Logo, NavBar, Footer, PageShell, TextField, AuthCard, SubmitButton)
 │   │   └── pages/
 │   │       ├── HealthCheck/  # boutons de vérification du backend
 │   │       ├── Home/         # accueil visiteur et connecté
 │   │       ├── Signup/       # inscription
 │   │       └── Signin/       # connexion
+│   ├── logic/          # logique métier pure (auth, home) et ses tests
 │   ├── lib/
-│   │   ├── api/        # appels réseau (client, health, queryKeys)
+│   │   ├── api/        # appels réseau (client, auth, health, queryKeys)
 │   │   ├── queryClient.ts
 │   │   └── utils.ts
 │   ├── data/           # textes des écrans
