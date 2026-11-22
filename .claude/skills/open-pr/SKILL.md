@@ -18,7 +18,7 @@ Le skill s'arrête là. Il ne merge pas, et **ne touche pas au ticket Notion** :
 ## Étapes
 
 1. **Vérifier le point de départ.** `git status` et branche courante. S'il reste des changements non commités, le signaler et demander — ne pas commiter à la place de l'utilisateur.
-2. **Passer le verrou.** `pnpm lint`, puis `pnpm build` (typecheck via `tsc -b` + build Vite), puis `pnpm test:run` (Vitest, les tests unitaires colocalisés).
+2. **Passer le verrou.** `pnpm lint`, puis `pnpm build` (typecheck via `tsc -b` + build Vite), puis `pnpm test` (Vitest, les tests unitaires colocalisés).
 3. **Pousser.** `git push -u origin <branche>`.
 4. **Ouvrir la PR.** `gh pr create --base dev --head <branche>`, titre clair et corps dérivé des commits de la branche. Afficher l'URL.
 

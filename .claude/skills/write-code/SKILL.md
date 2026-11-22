@@ -15,7 +15,7 @@ description: Écrit la logique métier frontend jusqu'à faire passer au vert le
 ## Sortie
 
 - Le code frontend qui fait passer le cahier des charges : les fonctions pures dans `src/logic/`, les appels réseau dans `src/lib/api/`, et leur branchement sur les composants, selon les conventions du repo.
-- **Avec tests unitaires** : les tests concernés au vert (`pnpm test:run`), plus `pnpm build` (typecheck) et `pnpm lint` qui passent.
+- **Avec tests unitaires** : les tests concernés au vert (`pnpm test`), plus `pnpm build` (typecheck) et `pnpm lint` qui passent.
 - **Sans tests unitaires** : l'app démarre (`pnpm dev`), et `pnpm build` et `pnpm lint` passent.
 - Un **rapport** de ce qui est prêt, et la proposition de lancer `e2e-test-writer` pour transcrire les smokes en e2e.
 
@@ -74,7 +74,7 @@ Dans les 2 cas, le cahier des charges dicte le périmètre. Ne pas deviner des c
 
 ## Étape 4 : Vérifier
 
-**Avec tests unitaires**, les lancer après chaque changement significatif (`pnpm test:run`).
+**Avec tests unitaires**, les lancer après chaque changement significatif (`pnpm test`).
 
 - Si un test échoue → corriger **l'implémentation**, pas le test.
 - Si un test semble faux → le **signaler à l'utilisateur**, ne pas le modifier sans validation.

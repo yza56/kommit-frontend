@@ -105,7 +105,7 @@ Au-delà de la revue générale, regarder en priorité ces pièges propres au re
 1. **Cadrer le diff.** Sans cible → `git diff dev...HEAD --stat` puis le diff complet, plus `git status` pour les fichiers non commités. Avec cible → lire les fichiers nommés (ou `gh pr diff`).
 2. **Lire les conventions.** `.claude/rules/*.md` + le `CLAUDE.md` du repo. Consulter `docs/testing-strategy.md` si le doute porte sur la stratégie de test, et `docs/workflow-ticket-frontend.md` sur le périmètre d'une couche.
 3. **Relire chaque fichier changé en entier**, pas seulement les lignes du diff : un changement peut casser un invariant ailleurs dans le même fichier. Ouvrir les fichiers voisins appelés/appelants si le doute porte sur un contrat (`src/logic/`, le client d'API, `apiContract.ts`).
-4. **Vérifier ce qui se vérifie.** Lancer `pnpm lint`, `pnpm build` (typecheck via `tsc -b`) et `pnpm test:run` (Vitest) si présents dans `package.json`, et rapporter le résultat réel (pas « ça devrait passer »). Les e2e Playwright (`pnpm test:e2e`) sont hors CI et exigent le backend lancé : ne les jouer que si l'utilisateur le demande. Ne rien corriger, juste constater.
+4. **Vérifier ce qui se vérifie.** Lancer `pnpm lint`, `pnpm build` (typecheck via `tsc -b`) et `pnpm test` (Vitest) si présents dans `package.json`, et rapporter le résultat réel (pas « ça devrait passer »). Les e2e Playwright (`pnpm test:e2e`) sont hors CI et exigent le backend lancé : ne les jouer que si l'utilisateur le demande. Ne rien corriger, juste constater.
 5. **Rédiger la revue** selon le contrat de sortie ci-dessus.
 
 ## Règles

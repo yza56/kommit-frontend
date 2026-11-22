@@ -160,7 +160,7 @@ sortir cette logique dans une fonction sans rendu ? » Si oui, on l'extrait.
 
 **Vérification**, au fil de l'eau :
 
-- tests concernés verts (`pnpm test:run`) ;
+- tests concernés verts (`pnpm test`) ;
 - `pnpm build` (typecheck via `tsc -b`) ;
 - lint sans erreur.
 

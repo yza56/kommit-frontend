@@ -119,7 +119,7 @@ tort, et le signaler explicitement dans le rapport final**. Concrètement :
 | 2 | Comprendre le contrat & les données | Types partagés, chaînes exactes des codes/messages, forme des entrées/sorties |
 | 3 | Lire l'inventaire | Prendre les RM 🟢 + la part unitaire des 🟠 (le tri est déjà fait en amont) |
 | 4 | Écrire les tests | Logique métier pure de `src/logic/`, sans mock par défaut, pattern AAA |
-| 5 | Vérifier que tout est rouge | Lancer `pnpm test:run`, confirmer l'échec sur les assertions |
+| 5 | Vérifier que tout est rouge | Lancer `pnpm test`, confirmer l'échec sur les assertions |
 | 6 | Rapporter au parent | Fichiers écrits, RM couvertes, état des tests, points ambigus |
 
 ## Étape 1 : Collecter les règles métier
@@ -200,12 +200,11 @@ it("route INVALID_CREDENTIALS vers l'erreur générique du formulaire", () => {
 Framework : **Vitest**. Vérifier qu'il est réellement **exploitable**, pas juste présent :
 
 - Vitest doit être en `devDependencies` — sinon `pnpm add -D vitest`.
-- Le `package.json` doit exposer un **script `test:run`** qui lance Vitest une passe puis
-  sort : `"test:run": "vitest run"`, à côté du `"test": "vitest"` (mode watch, le défaut
-  Vitest que l'utilisateur lance au quotidien). **S'ils manquent, les ajouter.**
-  Un binaire présent sans script n'est pas configuré : `pnpm test:run` ne fait rien tant que
-  le script n'existe pas, et c'est la commande que la CI et cet agent lancent (le watch, lui,
-  ne rendrait jamais la main en automatisation).
+- Le `package.json` doit exposer un **script `test`** : `"test": "vitest"`. **S'il manque,
+  l'ajouter.** Un binaire présent sans script n'est pas configuré : `pnpm test` ne fait rien
+  tant que le script n'existe pas, et c'est la commande que la CI et cet agent lancent.
+  Vitest rend la main tout seul quand il n'est pas lancé dans un terminal interactif
+  (automatisation, CI), pas besoin d'un second script `vitest run`.
 - Toujours en **pnpm** (rule `pnpm.md`), jamais `npm`/`npx`.
 
 ## Étape 5 : Créer les stubs et vérifier que tout est rouge
@@ -232,7 +231,7 @@ que l'implémentation n'existe pas, donc le lint reste rouge et boucle. `eslint.
 tolère `^_` : un param préfixé passe vert dès l'écriture. L'implémentation (write-code) le
 renommera en le câblant.
 
-Lancer `pnpm test:run` (une passe, pas le watch). Tous les tests doivent échouer sur les **assertions** (`expect`),
+Lancer `pnpm test` (une passe, pas le watch). Tous les tests doivent échouer sur les **assertions** (`expect`),
 pas sur les imports ni sur des `TypeError`. Si un test échoue à l'import → il manque un stub.
 Si un test passe → c'est suspect (le stub renvoie par hasard la bonne valeur, ou le test ne
 teste rien).
@@ -240,6 +239,6 @@ teste rien).
 ## Étape 6 : Rapporter au parent
 
 Rendre un rapport **court** : les fichiers créés/modifiés (chemins), les RM couvertes, la
-commande pour lancer les tests (`pnpm test:run`) et **leur état réel** (combien de rouges,
+commande pour lancer les tests (`pnpm test`) et **leur état réel** (combien de rouges,
 sur quoi ils échouent), et la liste des points remontés. Ne pas recopier les tests dans le
 rapport — ils vivent dans les fichiers.
